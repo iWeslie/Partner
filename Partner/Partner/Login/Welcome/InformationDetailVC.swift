@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import MyLayout
+
 class InformationDetailVC: UIViewController {
     var detailViewIsHidden : Bool?
     @IBOutlet weak var CompanyView: UIView!

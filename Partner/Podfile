@@ -8,7 +8,7 @@ target 'Partner' do
   # Pods for Partner
 
  pod 'AFNetworking'
- pod 'MyLayout'
+
   target 'PartnerTests' do
     inherit! :search_paths
     # Pods for testing

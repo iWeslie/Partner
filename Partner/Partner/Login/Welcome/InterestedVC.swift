@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import MyLayout
+
 class InterestedVC: UIViewController {
 
     override func viewDidLoad() {
@@ -19,31 +19,6 @@ class InterestedVC: UIViewController {
     override func loadView() {
         super.loadView()
         
-        
-        let S = MyTableLayout.init(orientation: MyOrientation_Vert)
-        S?.wrapContentWidth = true
-        S?.subviewHSpace = 10
-        S?.subviewVSpace = 10
-        S?.addRow(MyLayoutSize.wrap, colSize:MyLayoutSize.wrap)
-        
-        let A = UIView.init()
-        A.mySize = CGSize.init(width: 50, height: 40)
-        S?.addSubview(A)
-        
-        let B = UIView.init()
-        B.mySize = CGSize.init(width: 150, height: 40)
-        S?.addSubview(B)
-        
-        S?.addRow(MyLayoutSize.wrap, colSize:MyLayoutSize.wrap)
-        let C = UIView.init()
-        C.mySize = CGSize.init(width: 250, height: 40)
-        S?.addSubview(C)
-        
-        A.backgroundColor = UIColor.red
-        B.backgroundColor = UIColor.blue
-        C.backgroundColor = UIColor.brown
-        
-        self.view.addSubview(S!)
     }
 
     override func didReceiveMemoryWarning() {
