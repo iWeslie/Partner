@@ -10,9 +10,8 @@
 		53778418D7E5BF3B198BAAE4 /* Pods_PartnerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EFCB1C477A17AA50E9FE560 /* Pods_PartnerUITests.framework */; };
 		93A2197792B5860862374D6B /* Pods_PartnerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE2C0C49A3694DDBF725D999 /* Pods_PartnerTests.framework */; };
 		B62B05B51FFE291400BCFE3E /* shadowBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62B05B41FFE291400BCFE3E /* shadowBtn.swift */; };
-		B65376142010C0B200CFB32B /* CFFlowButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65376132010C0B200CFB32B /* CFFlowButtonView.swift */; };
-		B65376162010C0B900CFB32B /* Extension+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65376152010C0B900CFB32B /* Extension+UIView.swift */; };
 		B65517E6200C4932007799BC /* InformationDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65517E5200C4932007799BC /* InformationDetailVC.swift */; };
+		B65517E8200C512A007799BC /* Extension+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65517E7200C506A007799BC /* Extension+UIViewController.swift */; };
 		B65517EA200C800E007799BC /* InterestedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65517E9200C800E007799BC /* InterestedVC.swift */; };
 		B680342B1FFCD5D700FE4BF6 /* WelcomeLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B680342A1FFCD5D700FE4BF6 /* WelcomeLoginVC.swift */; };
 		B690A7921FFF607200AAA051 /* RegisterAndLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B690A7911FFF607200AAA051 /* RegisterAndLoginVC.swift */; };
@@ -60,10 +59,8 @@
 		9032E3D99C1574E7CE07F113 /* Pods-PartnerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PartnerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PartnerTests/Pods-PartnerTests.release.xcconfig"; sourceTree = "<group>"; };
 		AE2C0C49A3694DDBF725D999 /* Pods_PartnerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PartnerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B62B05B41FFE291400BCFE3E /* shadowBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = shadowBtn.swift; sourceTree = "<group>"; };
-		B65376092010BC0D00CFB32B /* Partner-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Partner-Bridging-Header.h"; sourceTree = "<group>"; };
-		B65376132010C0B200CFB32B /* CFFlowButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CFFlowButtonView.swift; sourceTree = "<group>"; };
-		B65376152010C0B900CFB32B /* Extension+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIView.swift"; sourceTree = "<group>"; };
 		B65517E5200C4932007799BC /* InformationDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationDetailVC.swift; sourceTree = "<group>"; };
+		B65517E7200C506A007799BC /* Extension+UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIViewController.swift"; sourceTree = "<group>"; };
 		B65517E9200C800E007799BC /* InterestedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestedVC.swift; sourceTree = "<group>"; };
 		B680342A1FFCD5D700FE4BF6 /* WelcomeLoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeLoginVC.swift; sourceTree = "<group>"; };
 		B690A7911FFF607200AAA051 /* RegisterAndLoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterAndLoginVC.swift; sourceTree = "<group>"; };
@@ -141,14 +138,6 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		B65517EB200DAAE4007799BC /* FlowButtonView */ = {
-			isa = PBXGroup;
-			children = (
-				B65376132010C0B200CFB32B /* CFFlowButtonView.swift */,
-			);
-			path = FlowButtonView;
-			sourceTree = "<group>";
-		};
 		D378FE921FF0D21600065EEC = {
 			isa = PBXGroup;
 			children = (
@@ -187,7 +176,6 @@
 				D378FEA21FF0D21600065EEC /* Main.storyboard */,
 				D378FEA51FF0D21600065EEC /* Assets.xcassets */,
 				D378FEA71FF0D21600065EEC /* LaunchScreen.storyboard */,
-				B65376092010BC0D00CFB32B /* Partner-Bridging-Header.h */,
 				D378FEAA1FF0D21600065EEC /* Info.plist */,
 			);
 			path = Partner;
@@ -225,7 +213,6 @@
 		D378FECD1FF0D24F00065EEC /* Welcome */ = {
 			isa = PBXGroup;
 			children = (
-				B65517EB200DAAE4007799BC /* FlowButtonView */,
 				B680342A1FFCD5D700FE4BF6 /* WelcomeLoginVC.swift */,
 				B62B05B41FFE291400BCFE3E /* shadowBtn.swift */,
 				B690A7911FFF607200AAA051 /* RegisterAndLoginVC.swift */,
@@ -343,7 +330,7 @@
 		D378FEDB1FF0D4EB00065EEC /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				B65376152010C0B900CFB32B /* Extension+UIView.swift */,
+				B65517E7200C506A007799BC /* Extension+UIViewController.swift */,
 				D378FEF31FF0E3E000065EEC /* Animations */,
 			);
 			path = Extension;
@@ -869,7 +856,6 @@
 				TargetAttributes = {
 					D378FE9A1FF0D21600065EEC = {
 						CreatedOnToolsVersion = 9.2;
-						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
 					D378FEAE1FF0D21600065EEC = {
@@ -1075,12 +1061,10 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Partner/Pods-Partner-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
-				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1094,14 +1078,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B65517E8200C512A007799BC /* Extension+UIViewController.swift in Sources */,
 				B690A7921FFF607200AAA051 /* RegisterAndLoginVC.swift in Sources */,
 				B62B05B51FFE291400BCFE3E /* shadowBtn.swift in Sources */,
 				B65517EA200C800E007799BC /* InterestedVC.swift in Sources */,
-				B65376162010C0B900CFB32B /* Extension+UIView.swift in Sources */,
 				B680342B1FFCD5D700FE4BF6 /* WelcomeLoginVC.swift in Sources */,
 				B65517E6200C4932007799BC /* InformationDetailVC.swift in Sources */,
 				D378FE9F1FF0D21600065EEC /* AppDelegate.swift in Sources */,
-				B65376142010C0B200CFB32B /* CFFlowButtonView.swift in Sources */,
 				D378FEF21FF0E36600065EEC /* NetworkTools.swift in Sources */,
 				B690A7962003652D00AAA051 /* ChooseIdentityVC.swift in Sources */,
 			);
@@ -1270,7 +1253,6 @@
 			baseConfigurationReference = 172AC59E61123A8F751E23DB /* Pods-Partner.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Partner/Info.plist;
@@ -1278,8 +1260,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.NJQL.Partner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Partner/Login/Welcome/FlowButtonView/Partner-Bridging-Header.h";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -1290,7 +1270,6 @@
 			baseConfigurationReference = 2E04E32645370430D88F1860 /* Pods-Partner.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Partner/Info.plist;
@@ -1298,7 +1277,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.NJQL.Partner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Partner/Login/Welcome/FlowButtonView/Partner-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
