@@ -7,8 +7,8 @@ target 'Partner' do
 
   # Pods for Partner
 
- pod 'AFNetworking'
-
+ 	pod 'AFNetworking'
+	pod 'Masonry'
   target 'PartnerTests' do
     inherit! :search_paths
     # Pods for testing
