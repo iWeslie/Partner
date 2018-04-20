@@ -17,6 +17,10 @@ class ProfileSkillsSelectorTableViewBodyCell: UITableViewCell {
         didSet {
             var str = ""
             for skill in skillArray {
+                if skill == "+自定义" {
+                    skillArray.remove(at: skillArray.index(of: skill)!)
+                    continue
+                }
                 str += "\(skill),"
             }
             if !str.isEmptyString {
@@ -64,7 +68,9 @@ class ProfileSkillsSelectorTableViewBodyCell: UITableViewCell {
             }
         } else {
             setTagClicked(sender)
-            skillArray.append(title)
+            if title != "+自定义" {
+                skillArray.append(title)
+            }
         }
     }
     

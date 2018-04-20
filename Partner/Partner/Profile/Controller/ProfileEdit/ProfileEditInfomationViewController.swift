@@ -162,6 +162,19 @@ class ProfileEditInfomationViewController: UIViewController, UITableViewDelegate
     override func viewWillAppear(_ animated: Bool) {
         self.tabBarController?.tabBar.isHidden = true
         
+        if let hobbyCell = hobbyCell {
+            if hobbyCell.customBtn1.titleLabel?.text == "+自定义" { hobbyCell.reverseTagClicked(hobbyCell.customBtn1) }
+            if hobbyCell.customBtn2.titleLabel?.text == "+自定义" { hobbyCell.reverseTagClicked(hobbyCell.customBtn2) }
+            if hobbyCell.customBtn3.titleLabel?.text == "+自定义" { hobbyCell.reverseTagClicked(hobbyCell.customBtn3) }
+            if hobbyCell.customBtn4.titleLabel?.text == "+自定义" { hobbyCell.reverseTagClicked(hobbyCell.customBtn4) }
+        } else if let skillCell = skillCell {
+            if skillCell.customBtn5.titleLabel?.text == "+自定义" { skillCell.reverseTagClicked(skillCell.customBtn5) }
+            if skillCell.customBtn6.titleLabel?.text == "+自定义" { skillCell.reverseTagClicked(skillCell.customBtn6) }
+            if skillCell.customBtn7.titleLabel?.text == "+自定义" { skillCell.reverseTagClicked(skillCell.customBtn7) }
+            if skillCell.customBtn8.titleLabel?.text == "+自定义" { skillCell.reverseTagClicked(skillCell.customBtn8) }
+        }
+        
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -394,6 +407,9 @@ class ProfileEditInfomationViewController: UIViewController, UITableViewDelegate
                 skillCell.skillArray = skillArray
                 // traverse the whole array and set selected status
                 for skill in skillArr {
+                    if skill == "+自定义" {
+                        skillArr.remove(at: skillArr.index(of: "+自定义")!)
+                    }
                     for btn in skillCell.contentView.subviews {
                         let button = btn as! ShadowButton
                         let btnTitle = button.titleLabel!.text!
@@ -402,7 +418,9 @@ class ProfileEditInfomationViewController: UIViewController, UITableViewDelegate
                             button.backgroundColor = #colorLiteral(red: 0.5529412031, green: 0.6274510026, blue: 0.6941176653, alpha: 1)
                             button.setTitleColor(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), for: .normal)
                             // remove the selected button in array
-                            skillArr.remove(at: skillArr.index(of: btnTitle)!)
+                            if let index = skillArr.index(of: btnTitle) {
+                                skillArr.remove(at: index)
+                            }
                         } else {
                             continue
                         }
@@ -548,6 +566,20 @@ class ProfileEditInfomationViewController: UIViewController, UITableViewDelegate
         // MARK:- end deiting to force the object resign first responder
         self.profileInfoTableView.endEditing(true)
         keyboardWillHide(withTransforming: profileInfoTableView)
+        
+        if let hobbyCell = hobbyCell {
+            if hobbyCell.customBtn1.titleLabel?.text == "+自定义" { hobbyCell.reverseTagClicked(hobbyCell.customBtn1) }
+            if hobbyCell.customBtn2.titleLabel?.text == "+自定义" { hobbyCell.reverseTagClicked(hobbyCell.customBtn2) }
+            if hobbyCell.customBtn3.titleLabel?.text == "+自定义" { hobbyCell.reverseTagClicked(hobbyCell.customBtn3) }
+            if hobbyCell.customBtn4.titleLabel?.text == "+自定义" { hobbyCell.reverseTagClicked(hobbyCell.customBtn4) }
+        } else if let skillCell = skillCell {
+            if skillCell.customBtn5.titleLabel?.text == "+自定义" { skillCell.reverseTagClicked(skillCell.customBtn5) }
+            if skillCell.customBtn6.titleLabel?.text == "+自定义" { skillCell.reverseTagClicked(skillCell.customBtn6) }
+            if skillCell.customBtn7.titleLabel?.text == "+自定义" { skillCell.reverseTagClicked(skillCell.customBtn7) }
+            if skillCell.customBtn8.titleLabel?.text == "+自定义" { skillCell.reverseTagClicked(skillCell.customBtn8) }
+        }
+        
+        
     }
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {

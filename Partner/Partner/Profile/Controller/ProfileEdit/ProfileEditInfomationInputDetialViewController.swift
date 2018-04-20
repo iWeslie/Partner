@@ -82,6 +82,9 @@ class ProfileEditInfomationInputDetialViewController: UIViewController {
             }
             
             let hobbyCell = source.profileInfoTableView.cellForRow(at: IndexPath.init(row: 0, section: 2)) as! ProfileHobbiesSelectorTableViewBodyCell
+            
+            hobbyCell.hobbyArray.append(inputText!)
+            
             switch segue.identifier! {
             case "PEICustomHobbyTagSegue1" :
                 hobbyCell.customBtn1.setTitle(inputText, for: .normal)
@@ -114,6 +117,7 @@ class ProfileEditInfomationInputDetialViewController: UIViewController {
                 return
             }
             let skillCell = source.profileInfoTableView.cellForRow(at: IndexPath.init(row: 0, section: 3)) as! ProfileSkillsSelectorTableViewBodyCell
+            skillCell.skillArray.append(inputText!)
             switch segue.identifier! {
             case "PEICustomSkillTagSegue1" :
                 skillCell.customBtn5.setTitle(inputText, for: .normal)
