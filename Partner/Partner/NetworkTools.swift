@@ -88,7 +88,7 @@ extension NetWorkTool {
     //用户登录
     func UserLogin( _ account:String, password:String  , finished:@escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()) {
         //1.获取请求的URLString
-        let urlString = "http://106.15.199.8/qm/user/api/userLogin.do"
+        let urlString = "http://47.100.167.109/qm/user/api/userLogin.do"
         //2.获取请求参数
         let parameters = ["phone" : account , "password": password]
         //3.发送请求参数
@@ -106,7 +106,7 @@ extension NetWorkTool {
     //用户注册
     func userRegister(phone:String , password : String , code : String , finished:@escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()) {
         //1.获取请求的URLString
-        let urlString = "http://106.15.199.8/qm/user/api/ios/userRegister.do"
+        let urlString = "http://47.100.167.109/qm/user/api/ios/userRegister.do"
         //2.获取请求参数
         let parameters = ["phone" : phone , "password": password, "code" : code ]
         //3.发送请求参数
@@ -123,7 +123,7 @@ extension NetWorkTool {
 //
     func userRegister1(phone:String , password : String , code : String? , finished:@escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()) {
         //1.获取请求的URLString
-        let urlString = "http://106.15.199.8/qm/user/api/userRegister.do"
+        let urlString = "http://47.100.167.109/qm/user/api/userRegister.do"
         //2.获取请求参数
         let parameters = ["phone" : phone , "password": password]
         //3.发送请求参数
@@ -141,7 +141,7 @@ extension NetWorkTool {
     //忘记密码
     func forgetPwd(phone:String , password : String , code : String , finished:@escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()) {
         //1.获取请求的URLString
-        let urlString = "http://106.15.199.8/qm/user/api/ios/forgetPwd.do"
+        let urlString = "http://47.100.167.109/qm/user/api/ios/forgetPwd.do"
         //2.获取请求参数
         let parameters = ["phone" : phone , "newPwd": password, "code" : code ]
         //3.发送请求参数
@@ -167,7 +167,7 @@ extension NetWorkTool {
 
     func perfectUserInfo(token:String , image : UIImage?, realName : String, gender : Int ,companyName : String?, jobName : String?, communityId : Int?,  finished:@escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()){
         //1.获取请求的URLString
-        let urlString = "http://106.15.199.8/qm/user/api/perfectUserInfo.do"
+        let urlString = "http://47.100.167.109/qm/user/api/perfectUserInfo.do"
         //2.获取请求参数
         let parameters =  ["token" : token , "realName" : realName , "gender" : gender , "companyName" : companyName, "jobName" : jobName , "communityId" : communityId ] as [String : Any]
         //3.发送请求参数
@@ -195,7 +195,7 @@ extension NetWorkTool {
     // 验证码发送
     func getDynamicpw(phone:String , finished:@escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()) {
         //1.获取请求的URLString
-        let urlString = "http://106.15.199.8/qm/user/api/sendDynamicpw.do"
+        let urlString = "http://47.100.167.109/qm/user/api/sendDynamicpw.do"
         //2.获取请求参数
         let parameters = ["phone" : phone]
         //3.发送请求参数
@@ -214,7 +214,7 @@ extension NetWorkTool {
     //选择个人身份
     func updateUserIndentity(token:String ,idenId :userCatrgory , finished:@escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()) {
         //1.获取请求的URLString
-        let urlString = "http://106.15.199.8/qm/user/api/updateUserIndentity.do"
+        let urlString = "http://47.100.167.109/qm/user/api/updateUserIndentity.do"
         //2.获取请求参数
         let parameters = ["idenId" : idenId.rawValue ,"token" : token] as [String : Any]
         //3.发送请求参数
@@ -229,10 +229,10 @@ extension NetWorkTool {
         }
     }
     
-    //获取城市列表 http://106.15.199.8/qm/community/api/getCityAndCommunityList.do
+    //获取城市列表 http://47.100.167.109/qm/community/api/getCityAndCommunityList.do
     func getCommunityCityList(token:String,finished:@escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()){
         //1.获取请求的URLString
-        let urlString = "http://106.15.199.8/qm/community/api/getCityAndCommunityList.do"
+        let urlString = "http://47.100.167.109/qm/community/api/getCityAndCommunityList.do"
         //2.获取请求参数
         let parameters = ["token" : token] as [String : Any]
         //3.发送请求参数
@@ -246,10 +246,10 @@ extension NetWorkTool {
             finished(resultDict, error)
         }
     }
-    //服务类型列表（type/getServiceTypeList）http://106.15.199.8/qm/type/api/getServiceTypeList.do
+    //服务类型列表（type/getServiceTypeList）http://47.100.167.109/qm/type/api/getServiceTypeList.do
     func getServiceTypeList(finished:@escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()){
         //1.获取请求的URLString
-        let urlString = "http://106.15.199.8/qm/type/api/getServiceTypeList.do"
+        let urlString = "http://47.100.167.109/qm/type/api/getServiceTypeList.do"
         //2.获取请求参数
         let parameters = [:] as [String : Any]
         //3.发送请求参数
@@ -266,10 +266,10 @@ extension NetWorkTool {
     
     
     //获取标签列表
-    //http://106.15.199.8/qm/tag/api/getTagList.do  token type
+    //http://47.100.167.109/qm/tag/api/getTagList.do  token type
     func getTagList(token:String , type : Int, finished:@escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()){
         //1.获取请求的URLString
-        let urlString = "http://106.15.199.8/qm/tag/api/getTagList.do"
+        let urlString = "http://47.100.167.109/qm/tag/api/getTagList.do"
         //2.获取请求参数
         let parameters = ["token" : token , "type" : type] as [String : Any]
         //3.发送请求参数
@@ -287,7 +287,7 @@ extension NetWorkTool {
     //完善标签信息
     func perfectUsertagInfo(token:String , type : Int, tagName : String, finished:@escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()){
         //1.获取请求的URLString
-        let urlString = "http://106.15.199.8/qm/user/api/perfectUserTagInfo.do"
+        let urlString = "http://47.100.167.109/qm/user/api/perfectUserTagInfo.do"
         //2.获取请求参数
         let parameters = ["token" : token , "type" : type ,"tagName" : tagName] as [String : Any]
         //3.发送请求参数
@@ -303,10 +303,10 @@ extension NetWorkTool {
     }
     
     
-    //完善合作需求http://106.15.199.8/qm/user/api/perfectUserRequireInfo.do
+    //完善合作需求http://47.100.167.109/qm/user/api/perfectUserRequireInfo.do
     func perfectUserRequireInfo(token:String ,  require : String, finished:@escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()){
         //1.获取请求的URLString
-        let urlString = "http://106.15.199.8/qm/user/api/perfectUserRequireInfo.do"
+        let urlString = "http://47.100.167.109/qm/user/api/perfectUserRequireInfo.do"
         //2.获取请求参数
         let parameters = ["token" : token , "require" : require] as [String : Any]
         //3.发送请求参数
@@ -331,7 +331,7 @@ extension NetWorkTool {
     //热门投资人（user/getHotInvestorList）
     func getHotInvestorList(finished:@escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()){
         //1.获取请求的URLString
-        let urlString = "http://106.15.199.8/qm/user/api/getHotInvestorList.do"
+        let urlString = "http://47.100.167.109/qm/user/api/getHotInvestorList.do"
         //2.获取请求参数
         let parameters = [:] as [String : Any]
         //3.发送请求参数
@@ -350,7 +350,7 @@ extension NetWorkTool {
     //
     func deliverValid(token:String, userId : Int, projectId : Int,finished:@escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()){
         //1.获取请求的URLString
-        let urlString = "http://106.15.199.8/qm/project/api/deliver/valid.do"
+        let urlString = "http://47.100.167.109/qm/project/api/deliver/valid.do"
         //2.获取请求参数
         let parameters = ["token" : token , "userId" : userId ,"projectId" : projectId] as [String : Any]
         //3.发送请求参数
@@ -368,7 +368,7 @@ extension NetWorkTool {
     //1.17.投资人列表（user/getInvestorList）
     func getInvestorList( pageNum : Int, order : Int, type : Int? , id : Int? ,fuzzy : String?, finished:@escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()){
         //1.获取请求的URLString
-        let urlString = "http://106.15.199.8/qm/user/api/getInvestorList.do"
+        let urlString = "http://47.100.167.109/qm/user/api/getInvestorList.do"
         //2.获取请求参数
         let parameters = ["type" : type ?? 0, "order" : order, "id" : id ?? 0 ,  "fuzzy" : fuzzy as Any ,"pageNum" :pageNum , "pageSize" : 10]
         //3.发送请求参数
@@ -391,7 +391,7 @@ extension NetWorkTool {
     //项目列表（project/getProjectList）
     func getProjectList(token:String?, order : Int, type : Int? , id : Int? ,fuzzy : String?, pageNum : Int, finished:@escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()){
         //1.获取请求的URLString
-        let urlString = "http://106.15.199.8/qm/project/api/getProjectList.do"
+        let urlString = "http://47.100.167.109/qm/project/api/getProjectList.do"
         //2.获取请求参数
         let parameters = ["token" : token ?? "", "type" : type ?? 0, "order" : order, "id" : id ?? 0 ,  "fuzzy" : fuzzy as Any ,"pageNum" :pageNum , "pageSize" : 10] 
         //3.发送请求参数
@@ -409,7 +409,7 @@ extension NetWorkTool {
     //资讯类型列表（info/type/list）
     func getTypeList(finished:@escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()){
         //1.获取请求的URLString
-        let urlString = "http://106.15.199.8/qm/info/api/type/list.do"
+        let urlString = "http://47.100.167.109/qm/info/api/type/list.do"
         //2.获取请求参数
         let parameters = [:] as [String : Any]
         //3.发送请求参数
@@ -428,7 +428,7 @@ extension NetWorkTool {
     //资讯列表（info/list）ss
     func getInfoList(type : Int? ,fuzzy : String?, pageNum : Int,finished:@escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()){
         //1.获取请求的URLString
-        let urlString = "http://106.15.199.8/qm/info/api/list.do"
+        let urlString = "http://47.100.167.109/qm/info/api/list.do"
         //2.获取请求参数
         let parameters = ["type" : type ?? 0,  "fuzzy" : fuzzy  ,"pageNum" :pageNum , "pageSize" : 10] as [String : Any]
         //3.发送请求参数

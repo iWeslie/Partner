@@ -23,7 +23,7 @@ extension NetWorkTool {
                       instJobName      : String?,
                       inTime           : String?,
                       finished: @escaping(_ result: [String : AnyObject]?, _ error: Error?) ->()) {
-        let urlString = "http://106.15.199.8/qm/auth/api/authInvestor.do"
+        let urlString = "http://47.100.167.109/qm/auth/api/authInvestor.do"
         var parameters = ["token"                   : token,
                           "nameCard"                : nameCard,
                           "industryIds"             : industryIds,
@@ -82,7 +82,7 @@ extension NetWorkTool {
                    compAddrDetail   : String,
                    areaId           : Int,
                    finished: @escaping(_ result: [String : AnyObject]?, _ error: Error?) ->()) {
-        let urlString = "http://106.15.199.8/qm/auth/api/authCompany.do"
+        let urlString = "http://47.100.167.109/qm/auth/api/authCompany.do"
         let parameters = ["token"                   : token,
                           "typeIds"                 : typeIds,
                           "company.compName"        : compName,
@@ -121,7 +121,7 @@ extension NetWorkTool {
     
     // MARK:- 认证申请信息
     func getAuthInfo(token: String, type: Int, finished: @escaping(_ result: [String : AnyObject]?, _ error: Error?) ->()) {
-        let urlString = "http://106.15.199.8/qm/auth/api/getAuthInfo.do"
+        let urlString = "http://47.100.167.109/qm/auth/api/getAuthInfo.do"
         let parameters = ["token" : token, "type" : type] as [String : Any]
         request(.POST, urlString: urlString, parameters: parameters as [String : AnyObject]) { (result, error) -> () in
             guard let resultDict = result as? [String : AnyObject] else {
@@ -134,7 +134,7 @@ extension NetWorkTool {
     
     // MARK:- 认证编辑信息
     func getAuthEditInfo(token: String, type: Int, id: Int, finished: @escaping(_ result: [String : AnyObject]?, _ error: Error?) ->()) {
-        let urlString = "http://106.15.199.8/qm/auth/api/getAuthEditInfo.do"
+        let urlString = "http://47.100.167.109/qm/auth/api/getAuthEditInfo.do"
         let parameters = ["token" : token, "type" : type, "id" : id] as [String : Any]
         request(.POST, urlString: urlString, parameters: parameters as [String : AnyObject]) { (result, error) -> () in
             guard let resultDict = result as? [String : AnyObject] else {
@@ -160,7 +160,7 @@ extension NetWorkTool {
                           instJobName      : String?,
                           inTime           : String?,
                           finished: @escaping(_ result: [String : AnyObject]?, _ error: Error?) ->()) {
-        let urlString = "http://106.15.199.8/qm/auth/api/editInvestorAuth.do"
+        let urlString = "http://47.100.167.109/qm/auth/api/editInvestorAuth.do"
         var parameters = ["token"                   : token,
                           "industryIds"             : industryIds,
                           "investor.id"             : id,
@@ -221,7 +221,7 @@ extension NetWorkTool {
                         compAddrDetail  : String,
                         areaId          : Int,
         finished: @escaping(_ result: [String : AnyObject]?, _ error: Error?) ->()) {
-        let urlString = "http://106.15.199.8/qm/auth/api/editCompanyAuth.do"
+        let urlString = "http://47.100.167.109/qm/auth/api/editCompanyAuth.do"
         let parameters = ["token"                   : token,
                           "typeIds"                 : typeIds,
                           "company.id"              : id,

@@ -35,7 +35,7 @@ extension NetWorkTool {
                    roundId      : Int,
                    finished: @escaping(_ result: [String : AnyObject]?, _ error: Error?) ->()) {
         
-        let urlString = "http://106.15.199.8/qm/project/api/create.do"
+        let urlString = "http://47.100.167.109/qm/project/api/create.do"
         let parameters = ["token"                 : token,
                           "fields"                : fields,
                           "project.projName"      : projName,
@@ -57,7 +57,7 @@ extension NetWorkTool {
     }
     
     func nullablePara(token: String, userDesc: String?, finished: @escaping(_ result: [String : AnyObject]?, _ error: Error?) ->()) {
-        let urlString = "http://106.15.199.8/qm/"
+        let urlString = "http://47.100.167.109/qm/"
         var parameters = ["token" : token]
         
         // MARK:- nullable parament
@@ -76,7 +76,7 @@ extension NetWorkTool {
     
     // MARK:- withImage
     func withImage(token: String, image: UIImage?, finished: @escaping(_ result: [String : AnyObject]?, _ error: Error?) ->()) {
-        let urlString = "http://106.15.199.8/qm/"
+        let urlString = "http://47.100.167.109/qm/"
         let parameters = ["token" : token]
        
         
@@ -114,7 +114,7 @@ extension NetWorkTool {
     
     
     func getCityAndCommunityList(finished: @escaping(_ result: [String : AnyObject]?, _ error: Error?) ->()) {
-        let urlString = "http://106.15.199.8/qm/community/api/getCityAndCommunityList.do"
+        let urlString = "http://47.100.167.109/qm/community/api/getCityAndCommunityList.do"
         request(.POST, urlString: urlString, parameters: nil) { (result, error) -> () in
             guard let resultDict = result as? [String : AnyObject] else {
                 finished(nil, error)

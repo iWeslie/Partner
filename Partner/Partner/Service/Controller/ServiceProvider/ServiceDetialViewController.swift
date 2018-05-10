@@ -81,6 +81,9 @@ class ServiceDetialViewController: UIViewController {
                         self?.phoneLab.text = phone
                     }
                     
+                    if let officialwebsiteLab = statusViewModel.site{
+                        self?.officialwebsiteLab.text = officialwebsiteLab
+                    }
                     
                   }
                 }

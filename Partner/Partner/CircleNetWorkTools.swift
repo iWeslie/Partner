@@ -18,7 +18,7 @@ extension NetWorkTool {
     //发布动态（moment/send）
     func momentSend(token:String , circleIds : String? , momeContent : String , momePublic : Int?, image : [UIImage]? , finished:@escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()){
         //1.获取请求的URLString
-        let urlString = "http://106.15.199.8/qm/moment/api/send.do"
+        let urlString = "http://47.100.167.109/qm/moment/api/send.do"
         //2.获取请求参数
         var parameters = ["token" : token , "moment.momeContent" : momeContent ,"moment.momePublic" : momePublic ?? 1 ,"moment.socialCircleId" : circleIds] as [String : Any]
         //"circleIds" : circleIds ,
@@ -125,7 +125,7 @@ extension NetWorkTool {
     //我的圈子列表（发布动态接口使用）（circle/getMyCircleEntityList）
     func getMyCircleEntityList(token:String ,finished:@escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()){
         //1.获取请求的URLString
-        let urlString = "http://106.15.199.8/qm/circle/api/getMyCircleEntityList.do"
+        let urlString = "http://47.100.167.109/qm/circle/api/getMyCircleEntityList.do"
         //2.获取请求参数
         let parameters = ["token" : token] as [String : Any]
         //3.发送请求参数
@@ -143,7 +143,7 @@ extension NetWorkTool {
     //轮播图列表（carousel/list）
     func getCarouselList(finished:@escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()){
         //1.获取请求的URLString
-        let urlString = "http://106.15.199.8/qm/carousel/api/list.do"
+        let urlString = "http://47.100.167.109/qm/carousel/api/list.do"
         //2.获取请求参数
         let parameters = ["type" : 1] as [String : Any]
         //3.发送请求参数
@@ -161,7 +161,7 @@ extension NetWorkTool {
     
     func getSocialCircleMomentList(token:String , type : Int , pageNum : Int, finished:@escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()){
         //1.获取请求的URLString
-        let urlString = "http://106.15.199.8/qm/moment/api/getSocialConnMomentList.do"
+        let urlString = "http://47.100.167.109/qm/moment/api/getSocialConnMomentList.do"
         //2.获取请求参数
         let parameters = ["token" : token , "type" : type, "pageNum" : pageNum] as [String : Any]
         //3.发送请求参数
@@ -179,7 +179,7 @@ extension NetWorkTool {
     //8.8.社圈页面动态列表（moment/getSocialCircleMomentList）
     func getCircleMomentList(token:String , type : Int , pageNum : Int, finished:@escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()){
         //1.获取请求的URLString
-        let urlString = "http://106.15.199.8/qm/moment/api/getSocialCircleMomentList.do"
+        let urlString = "http://47.100.167.109/qm/moment/api/getSocialCircleMomentList.do"
         //2.获取请求参数
         let parameters = ["token" : token , "circleId" : type, "pageNum" : pageNum] as [String : Any]
         //3.发送请求参数
@@ -196,7 +196,7 @@ extension NetWorkTool {
     //用户个人主页动态列表（moment/getMyHomePageMomentList）
     func getMyHomePageMomentList(token:String , userId : Int , pageNum : Int, finished:@escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()){
         //1.获取请求的URLString
-        let urlString = "http://106.15.199.8/qm/moment/api/getMyHomePageMomentList.do"
+        let urlString = "http://47.100.167.109/qm/moment/api/getMyHomePageMomentList.do"
         //2.获取请求参数
         let parameters = ["token" : token , "pageSize" : 10, "pageNum" : pageNum] as [String : Any]
         //3.发送请求参数
@@ -214,7 +214,7 @@ extension NetWorkTool {
     //
     func getUserHomePageMomentList(token:String , userId : Int , pageNum : Int, finished:@escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()){
         //1.获取请求的URLString
-        let urlString = "http://106.15.199.8/qm/moment/api/getUserHomePageMomentList.do"
+        let urlString = "http://47.100.167.109/qm/moment/api/getUserHomePageMomentList.do"
         //2.获取请求参数
         let parameters = ["token" : token , "userId" : userId, "pageNum" : pageNum] as [String : Any]
         //3.发送请求参数
@@ -231,11 +231,11 @@ extension NetWorkTool {
     
     
     
-    //http://106.15.199.8/qm/circle/api/getMyCircleList.do
+    //http://47.100.167.109/qm/circle/api/getMyCircleList.do
     //我的圈子列表（circle/getMyCircleList）
     func getMyCircleList(token:String ,finished:@escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()){
         //1.获取请求的URLString
-        let urlString = "http://106.15.199.8/qm/circle/api/getMyCircleList.do"
+        let urlString = "http://47.100.167.109/qm/circle/api/getMyCircleList.do"
         //2.获取请求参数
         let parameters = ["token" : token] as [String : Any]
         //3.发送请求参数
@@ -253,7 +253,7 @@ extension NetWorkTool {
     //其他圈子列表（circle/getOtherCircleList）
     func getOtherCircleList(token:String , pageNum : Int , pageSize : Int, finished:@escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()){
         //1.获取请求的URLString
-        let urlString = "http://106.15.199.8/qm/circle/api/getOtherCircleList.do"
+        let urlString = "http://47.100.167.109/qm/circle/api/getOtherCircleList.do"
         //2.获取请求参数
         let parameters = ["token" : token ,"pageNum" : pageNum, "pageSize" : pageSize] as [String : Any]
         //3.发送请求参数
@@ -272,7 +272,7 @@ extension NetWorkTool {
     // 创建圈子
     func circleCreated(token:String , membIds : String , circName : String, circDesc : String? , image : UIImage? , finished:@escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()){
         //1.获取请求的URLString
-        let urlString = "http://106.15.199.8/qm/circle/api/create.do"
+        let urlString = "http://47.100.167.109/qm/circle/api/create.do"
         //2.获取请求参数
         let parameters = ["token" : token ,"circle.circName" : circName, "circle.circDesc" : circDesc ,"membIds" : membIds] as [String : Any]
         //3.发送请求参数
@@ -300,7 +300,7 @@ extension NetWorkTool {
     // 获取成员 搜索用户
     func searchUserList(token:String , type : Int , fuzzy : String, circleId : Int?,finished:@escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()){
         //1.获取请求的URLString
-        let urlString = "http://106.15.199.8/qm/user/api/circle/searchUserList.do"
+        let urlString = "http://47.100.167.109/qm/user/api/circle/searchUserList.do"
         //2.获取请求参数
         let parameters = ["token" : token ,"type" : type, "circleId" : circleId , "fuzzy" : fuzzy] as [String : Any]
         //3.发送请求参数
@@ -319,7 +319,7 @@ extension NetWorkTool {
     //获取圈详情 getCircleDetailInfo
     func getCircleDetailInfo(token:String , id : Int ,finished:@escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()){
         //1.获取请求的URLString
-        let urlString = "http://106.15.199.8/qm/circle/api/getCircleDetailInfo.do"
+        let urlString = "http://47.100.167.109/qm/circle/api/getCircleDetailInfo.do"
         //2.获取请求参数
         let parameters = ["token" : token ,"id" : id] as [String : Any]
         //3.发送请求参数
@@ -338,7 +338,7 @@ extension NetWorkTool {
     //getCircleSetInfo
     func getCircleSetInfo(token:String , id : Int ,finished:@escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()){
         //1.获取请求的URLString
-        let urlString = "http://106.15.199.8/qm/circle/api/getCircleSetInfo.do"
+        let urlString = "http://47.100.167.109/qm/circle/api/getCircleSetInfo.do"
         //2.获取请求参数
         let parameters = ["token" : token ,"id" : id] as [String : Any]
         //3.发送请求参数
@@ -361,7 +361,7 @@ extension NetWorkTool {
     
     func updateSocialCircle(token : String , circleId : Int , type : Int, circleName : String?, image : UIImage?, desc : String?, finished:@escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()){
         //1.获取请求的URLString
-        let urlString = "http://106.15.199.8/qm/circle/api/updateSocialCircle.do"
+        let urlString = "http://47.100.167.109/qm/circle/api/updateSocialCircle.do"
         //2.获取请求参数
         let parameters = ["token" : token ,"circleId" : circleId ,"type" : type , "circleName" : circleName ?? "", "desc" :desc ?? "" ] as [String : Any]
         //3.发送请求参数
@@ -389,7 +389,7 @@ extension NetWorkTool {
     //解散圈子（circle/dissolveCircle）
     func dissolveCircle(token:String , id : Int ,finished:@escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()){
         //1.获取请求的URLString
-        let urlString = "http://106.15.199.8/qm/circle/api/dissolveCircle.do"
+        let urlString = "http://47.100.167.109/qm/circle/api/dissolveCircle.do"
         //2.获取请求参数
         let parameters = ["token" : token ,"id" : id] as [String : Any]
         //3.发送请求参数
@@ -407,7 +407,7 @@ extension NetWorkTool {
     //    退出圈子（circle/withdrawCircle）
     func withdrawCircle(token:String , id : Int ,finished:@escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()){
         //1.获取请求的URLString
-        let urlString = "http://106.15.199.8/qm/circle/api/withdrawCircle.do"
+        let urlString = "http://47.100.167.109/qm/circle/api/withdrawCircle.do"
         //2.获取请求参数
         let parameters = ["token" : token ,"id" : id] as [String : Any]
         //3.发送请求参数
@@ -427,7 +427,7 @@ extension NetWorkTool {
     //获取圈子成员列表（circle/getCircleMemberList）
     func getCircleMemberList(token:String , id : Int ,finished:@escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()){
         //1.获取请求的URLString
-        let urlString = "http://106.15.199.8/qm/circle/api/getCircleMemberList.do"
+        let urlString = "http://47.100.167.109/qm/circle/api/getCircleMemberList.do"
         //2.获取请求参数
         let parameters = ["token" : token ,"id" : id] as [String : Any]
         //3.发送请求参数
@@ -446,7 +446,7 @@ extension NetWorkTool {
     //邀请加入圈子 – 圈子创建者（circle/inviteJoin）
     func inviteJoin(token:String , id : Int , userId : Int, finished:@escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()){
         //1.获取请求的URLString
-        let urlString = "http://106.15.199.8/qm/circle/api/inviteJoin.do"
+        let urlString = "http://47.100.167.109/qm/circle/api/inviteJoin.do"
         //2.获取请求参数
         let parameters = ["token" : token ,"id" : id , "userId" : userId] as [String : Any]
         //3.发送请求参数
@@ -465,7 +465,7 @@ extension NetWorkTool {
     //9.10.申请加入圈子 – 非圈子创建者（circle/applyJoin）
     func applyJoin(token:String , id : Int , finished:@escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()){
         //1.获取请求的URLString
-        let urlString = "http://106.15.199.8/qm/circle/api/applyJoin.do"
+        let urlString = "http://47.100.167.109/qm/circle/api/applyJoin.do"
         //2.获取请求参数
         let parameters = ["token" : token ,"id" : id] as [String : Any]
         //3.发送请求参数
@@ -484,7 +484,7 @@ extension NetWorkTool {
     //举报原因列表（report/getReportReasonList）
     func getReportReasonListinviteJoin(finished:@escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()){
         //1.获取请求的URLString
-        let urlString = "http://106.15.199.8/qm/report/api/getReportReasonList.do"
+        let urlString = "http://47.100.167.109/qm/report/api/getReportReasonList.do"
         //2.获取请求参数
         let parameters = [:] as [String : Any]
         //3.发送请求参数
@@ -502,7 +502,7 @@ extension NetWorkTool {
     // 举报（report/report）
     func report(token:String , repoType : Int , reaId : Int, id :Int, finished:@escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()){
         //1.获取请求的URLString
-        let urlString = "http://106.15.199.8/qm/report/api/report.do"
+        let urlString = "http://47.100.167.109/qm/report/api/report.do"
         //2.获取请求参数
         let parameters = ["token" : token ,"repoType" : repoType, "reaId" : reaId, "id" :id] as [String : Any]
         //3.发送请求参数
@@ -521,7 +521,7 @@ extension NetWorkTool {
     //通知列表（notice/api/list）
     func getNoticeApiList(token:String ,finished:@escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()){
         //1.获取请求的URLString
-        let urlString = "http://106.15.199.8/qm/notice/api/list.do"
+        let urlString = "http://47.100.167.109/qm/notice/api/list.do"
         //2.获取请求参数
         let parameters = ["token" : token] as [String : Any]
         //3.发送请求参数
@@ -539,7 +539,7 @@ extension NetWorkTool {
     //设置通知已读（notice/api/read）
     func noticeRead(token:String , type : Int ,finished:@escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()){
         //1.获取请求的URLString
-        let urlString = "http://106.15.199.8/qm/notice/api/read.do"
+        let urlString = "http://47.100.167.109/qm/notice/api/read.do"
         //类型，1服务动态通知 2社联消息通知 3合伙人客服通知 4合伙人小助手通知
         //2.获取请求参数
         let parameters = ["token" : token, "type" : type] as [String : Any]
@@ -558,7 +558,7 @@ extension NetWorkTool {
     //社联通知列表（notice/api/socialconn/list）
     func getNoticeSocialConnList(token:String ,pageNum : Int,finished:@escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()){
         //1.获取请求的URLString
-        let urlString = "http://106.15.199.8/qm/notice/api/socialconn/list.do"
+        let urlString = "http://47.100.167.109/qm/notice/api/socialconn/list.do"
         //2.获取请求参数
         let parameters = ["token" : token ,"pageNum" : pageNum] as [String : Any]
         //3.发送请求参数
@@ -573,10 +573,10 @@ extension NetWorkTool {
         }
     }
     
-    //.服务通知列表（notice/api/service/list）http://106.15.199.8/qm/notice/api/service/list.do
+    //.服务通知列表（notice/api/service/list）http://47.100.167.109/qm/notice/api/service/list.do
     func getSeriviceList(token:String ,pageNum : Int,finished:@escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()){
         //1.获取请求的URLString
-        let urlString = "http://106.15.199.8/qm/notice/api/service/list.do"
+        let urlString = "http://47.100.167.109/qm/notice/api/service/list.do"
         //2.获取请求参数
         let parameters = ["token" : token ,"pageNum" : pageNum] as [String : Any]
         //3.发送请求参数
@@ -594,7 +594,7 @@ extension NetWorkTool {
     //13.7.小助手通知列表（notice/api/helper/list）
     func gethelperList(token:String ,pageNum : Int,finished:@escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()){
         //1.获取请求的URLString
-        let urlString = "http://106.15.199.8/qm/notice/api/helper/list.do"
+        let urlString = "http://47.100.167.109/qm/notice/api/helper/list.do"
         //2.获取请求参数
         let parameters = ["token" : token ,"pageNum" : pageNum] as [String : Any]
         //3.发送请求参数
@@ -614,7 +614,7 @@ extension NetWorkTool {
     //审核圈子成员 - 申请/受邀请（circle/api/member/approve）
     func getCircleMemberApprove(token:String ,circleMembId:Int, type:Int, op : Int, userId : Int,finished:@escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()){
         //1.获取请求的URLString
-        let urlString = "http://106.15.199.8/qm/circle/api/member/approve.do"
+        let urlString = "http://47.100.167.109/qm/circle/api/member/approve.do"
         //2.获取请求参数
         let parameters = ["token" : token ,"circleMembId" : circleMembId,"type" : type ,"op":op, "userId":userId] as [String : Any]
         //3.发送请求参数

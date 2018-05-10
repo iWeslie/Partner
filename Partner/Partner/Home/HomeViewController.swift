@@ -6,7 +6,30 @@
 //
 
 import UIKit
+import MJExtension
+
+class VersionModel: NSObject {
+    @objc var version: String?
+}
+
 class HomeViewController: UIViewController {
+    
+    var version: String? {
+        didSet {
+            if version! > localVersion {
+                let alert = UIAlertController(title: "提示", message: "有新版本可供下载，确定更新吗？", preferredStyle: .alert)
+                
+                let cancel = UIAlertAction(title: "取消", style: .cancel, handler: nil)
+                let confirm = UIAlertAction(title: "确定", style: .default) { (_) in
+                    let url = URL(string: "https://itunes.apple.com/us/app/id1360096509?ls=1&mt=8")!
+                    UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                }
+                alert.addAction(cancel)
+                alert.addAction(confirm)
+                self.present(alert, animated: true, completion: nil)
+            }
+        }
+    }
 
     @IBOutlet weak var topContentView: UIView!
     var   sliderView : UIView?
@@ -16,21 +39,29 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var loopView: LoopView!
     //滑动Btn数组
     var   sliderBtnArr  = [UIButton]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.automaticallyAdjustsScrollViewInsets = false
         self.navigationController?.isNavigationBarHidden = true
         addTopViewChildsBtn()
         addChildScroll()
-//        let RegisterAndLoginVC = UIStoryboard.init(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "RegisterAndLoginVCID")
-//                 let  navRegistAndLoginVC = UINavigationController.init(rootViewController: RegisterAndLoginVC)
-//     self.present(navRegistAndLoginVC, animated: true, completion: nil)
-//      
+        
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         self.tabBarController?.tabBar.isHidden = false
+        NetWorkTool.shareInstance.getITunesVersion { (result, error) in
+            if result != nil {
+                let resultDict = result?["results"] as! NSArray
+                let dict = resultDict.firstObject as! NSDictionary
+                let model = VersionModel.mj_object(withKeyValues: dict)
+                self.version = model?.version
+            }
+        }
     }
+    
     //初始化头部按钮
     func addTopViewChildsBtn(){
         let  btnArr = ["广场","资讯"]
@@ -142,10 +173,7 @@ extension   HomeViewController  : UIScrollViewDelegate{
         addBtnScroll(btn: tempBtn)
         
     }
-    
-    
-    
-    
-    
+ 
 }
+
 
